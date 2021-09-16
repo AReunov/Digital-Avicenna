@@ -1,15 +1,15 @@
-
-//ANCHOR slide
-$(document).ready(function () {
-	$('a[href^="#"]').bind("click", function (e) {
-		var anchor = $(this);
-		$('html, body').stop().animate({
-			scrollTop: $(anchor.attr('href')).offset().top - 20
-		}, 100);
-		e.preventDefault();
-	});
-	return false;
+// Anchor Slide
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
+
+
+
 
 
 
